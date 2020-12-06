@@ -1,0 +1,21 @@
+  .card{
+   
+    border: 0;
+    position: relative;
+    width: 100%;
+    //margin-bottom: 30px;
+    margin: 0;
+   box-shadow: 0 .5rem 1rem rgba(#000, .15) ;
+
+    .card-header{
+      background:  #27293d;
+      padding: 15px 15px 0;
+      border: 0;
+      color: rgba(#f1f1f1,0.8);
+
+      .card-title{
+          color: f1f1f1;
+          font-weight: 100;
+      }
+ }
+}

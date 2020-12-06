@@ -1,0 +1,21 @@
+<div class="card shadow-lg" >
+    <div class="card-header"  id="account-color"style="color: white;  border-top-style: solid; border-width: thick;"  
+    [ngStyle]="setStyles()">
+
+      <h5 class="card-title">{{ test_array[index].acct_type | uppercase }} ACCOUNT</h5>
+     <h6> {{test_array[index].accountNumber}}</h6>
+  
+    </div>
+
+    <div class="card-body">
+    
+    <h6>Balance ${{test_array[index].balance}}</h6>
+    
+    <app-transaction-card *ngFor="let a of fakeArray; let x = index" [counter] = x [account_number] = accounts[index].accountNumber ></app-transaction-card>
+    
+    
+      <button (click)="onSelect(accounts)" type="button" class="btn btn-dark" style="margin-top:2% ;">Account Overview</button>
+    </div>
+  </div>
+
+ <!-- "{'color':(country === 'US') ? 'orange' : 'red' }" -->

@@ -1,0 +1,30 @@
+<form #itemForm="ngForm"  class="card shadow-lg" id="bottom-card">
+    <div class="card-body">
+      <form>
+        <div class="row">
+          <div class="col">
+            <h6>I want to tranfer...</h6>
+            <input #myInput1 type="text" class="form-control" placeholder="$ Enter Amount">
+          </div>
+          <div class="col">
+            <h6>From this account...</h6>
+            <select #myInput2 class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+              <option selected>Choose...</option>
+              <option *ngFor="let a of test_array; let x = index" > {{x}} - {{ test_array[x].acct_type | uppercase }}: {{test_array[x].accountNumber}}</option>
+            </select>
+          </div>
+          <div class="col">
+            <h6>To this account</h6>
+            <select #myInput3 class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+              <option selected>Choose...</option>
+              <option *ngFor="let a of test_array; let x = index">{{x}} - {{ test_array[x].acct_type | uppercase }}  {{test_array[x].accountNumber}}</option>
+            </select>
+          </div>
+          <div class="col">
+            <h6 style="color: white;">I want to tranfer.....</h6>
+            <button type="submit" (click)="onSubmit(myInput1.value, myInput2.value, myInput3.value )" class="btn btn-dark">Transfer Funds</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </form>
