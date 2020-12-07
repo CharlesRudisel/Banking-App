@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from '../account_service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  title = 'BankingApplication';
 
-  ngOnInit(): void {
+  public accounts = []
+  public counter: number
+  
+ 
+
+  constructor(private _accountService: AccountService) {}
+
+  ngOnInit() {
+    this._accountService.getAccounts().subscribe(data => this.accounts = data);
+    
   }
 
+  
 }

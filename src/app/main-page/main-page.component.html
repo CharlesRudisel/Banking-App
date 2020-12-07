@@ -1,1 +1,31 @@
-<p>main-page works!</p>
+<div class="card text-center  rounded" id="main-card" style="background-color: #27293d;">
+
+    <div class="card-header" style="height: 100px;">
+      <main-navbar></main-navbar>
+    </div>
+  
+    <div class="card-header " style="background-color: #1E1E2F; ">
+      <h4 class="nav-link " style="color:white; font-weight: lighter;  ">Feeling lost? Let us help.</h4>
+  
+      <h4 class=" mr-sm-4" style="color:white; font-weight: lighter; ">844-444-4444 </h4>
+     <h4><button class="btn btn-secondary my-2 my-sm-0" type="submit">Live Chat</button> </h4> 
+    </div>
+  
+  
+    <h2 style="text-align: left; text-indent: 5.5%; padding-top: 2%; color: white;">My Accounts</h2>
+  
+    <div class="card-body ">
+      <div class="card-deck">
+        <app-acct-card *ngFor="let account of accounts; let i= index;" [index] = i  [test_array] = accounts class="card" ></app-acct-card>
+      </div>
+    </div>  
+  
+  
+    <h2 style="text-align: left; text-indent: 5.5%; padding-top: 2%; padding-bottom: 1.5%; color: white;">Quick Transfer</h2>
+  
+   <app-transfer-card [test_array] = accounts ></app-transfer-card>
+  
+    <app-footer></app-footer>
+  
+  </div>
+  
