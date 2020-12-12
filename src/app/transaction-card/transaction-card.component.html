@@ -1,9 +1,18 @@
 <div>
 
 <div id="HASH">
-    <span>  {{transactions[counter].description}}<br><h6 style="text-align: left;">{{transactions[counter].date}}</h6></span>
-    <span style="margin-top: 3%;">${{transactions[counter].amount}}</span> 
+    <span>  <h6 style="text-align: left;">{{transactions[counter].description}}<br></h6>  <h6 style="text-align: left;">{{transactions[counter].date}}</h6></span>
+
+
+    <div *ngIf="transactions[counter].amount > 0; else elseBlock">
+        <span style="color: lightgreen; margin-top: 3%;">${{transactions[counter].amount}}</span> 
+    </div>
+    <ng-template #elseBlock> <span style="color:red; margin-top: 3%;">${{transactions[counter].amount}}</span> </ng-template>
+
+
+   
 </div>
+
 
 
 

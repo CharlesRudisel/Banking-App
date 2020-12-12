@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../account_service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-account-overview',
@@ -10,11 +11,15 @@ export class AccountOverviewComponent implements OnInit {
 
 
   public accounts = []
-  fakeArray = new Array(100);
+  public acctNum;
+  fakeArray = new Array( Number(this.accounts.length) + 10);
 
-  constructor(private _accountService: AccountService) { }
+  constructor(private _accountService: AccountService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+    let id = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.acctNum = id;
     this._accountService.getAccounts().subscribe(data => this.accounts = data);
     
   }

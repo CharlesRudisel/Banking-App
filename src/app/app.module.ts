@@ -17,6 +17,11 @@ import { TransactionCardComponent } from './transaction-card/transaction-card.co
 import { AccountOverviewComponent } from './account-overview/account-overview.component';
 import { RouterModule } from '@angular/router';
 import { MainPageComponent } from './main-page/main-page.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { TableTwoComponent } from './table-two/table-two.component';
+import { TableThreeComponent } from './table-three/table-three.component';
+import { TableFourComponent } from './table-four/table-four.component';
+import { TableFiveComponent } from './table-five/table-five.component';
 
 
 @NgModule({
@@ -28,7 +33,12 @@ import { MainPageComponent } from './main-page/main-page.component';
     FooterComponent,
     TransactionCardComponent,
     AccountOverviewComponent,
-    MainPageComponent
+    MainPageComponent,
+    LineChartComponent,
+    TableTwoComponent,
+    TableThreeComponent,
+    TableFourComponent,
+    TableFiveComponent
    
   ],
   imports: [
