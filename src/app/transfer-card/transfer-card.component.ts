@@ -67,8 +67,8 @@ export class TransferCardComponent implements OnInit {
     this.test_array[this.to_acct_index].balance = this.b
 
     this.to_transaction
-    this.from_transaction = new Itransaction("Transfer to: "+this.test_array[this.to_acct_index].accountNumber , -(Balance_operand));
-    this.to_transaction = new Itransaction("Transfer from: "+this.test_array[this.from_acct_index].accountNumber , Balance_operand);
+    this.from_transaction = new Itransaction("Transfer to: "+this.test_array[this.to_acct_index].accountNumber , -(Balance_operand), 'bank-transfer' );
+    this.to_transaction = new Itransaction("Transfer from: "+this.test_array[this.from_acct_index].accountNumber , Balance_operand, 'bank-transfer');
      
 
     this._accountService.updateAccount(this.test_array[this.from_acct_index].accountNumber, this.test_array[this.from_acct_index])
