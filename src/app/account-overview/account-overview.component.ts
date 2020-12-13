@@ -13,14 +13,18 @@ export class AccountOverviewComponent implements OnInit {
   public accounts = []
   public acctNum;
   fakeArray = new Array( Number(this.accounts.length) + 10);
+  public account_type;
 
   constructor(private _accountService: AccountService, private route: ActivatedRoute) { }
 
   ngOnInit() {
 
+    
     let id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.acctNum = id;
     this._accountService.getAccounts().subscribe(data => this.accounts = data);
+
+    
     
   }
 

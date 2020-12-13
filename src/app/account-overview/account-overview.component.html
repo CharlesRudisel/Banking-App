@@ -13,6 +13,7 @@
                     <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
             </ul>
+            <h4 style="text-align: left; font-weight: lighter;">Account: {{acctNum}}</h4>
         </div>
 
             
@@ -40,7 +41,8 @@
 
 <div class="card text-center  rounded" id="main-card" style="background-color: #27293d;" id="box2">
     <div class="card-header" style = "background-color: black;">
-        <h3 style="text-align: left;">Transactions</h3>
+        <h3 style="text-align: left; font-weight: lighter;">Transactions</h3>
+        
     </div>
     <hr style=" background-color: #ccc; width:50%; margin:0 auto;">
     <div class="card-body" style = "background-color: black; height: 100%;">
@@ -57,11 +59,11 @@
 
 <div class="card text-center  rounded" style="background-color: #27293d;" id="box3">
     <div class="card-header" style = "background-color: black;">
-        <h4 style="text-align: left;">Income/Expenses</h4>
+        <h4 style="text-align: left; font-weight: lighter;">Income/Expenses</h4>
     </div>
     <div class="card-body" style = "background-color: black; height: 100%;">
         <div style="width: 100%; height: 80vh;">
-            <app-table-five></app-table-five>
+            <app-table-five [acct_num]= acctNum></app-table-five>
         </div>
     </div>
 </div>
@@ -72,8 +74,8 @@
 
     </div>
     <div class="card-body" style = "background-color: black;" >
-        <h4 class="card-title">Time to get strategic!</h4>
-        <p class="card-text">Further organize your financials goals with one of our checking, savings or credit
+        <h4 class="card-title" style="font-weight: lighter;">Time to get strategic!</h4>
+        <p class="card-text" style="font-weight: lighter;">Further organize your financials goals with one of our checking, savings or credit
             accounts! </p>
         <a href="#" class="btn btn-primary">Create New Account</a>
     </div>

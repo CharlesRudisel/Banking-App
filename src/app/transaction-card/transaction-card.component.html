@@ -1,7 +1,7 @@
 <div>
 
 <div id="HASH">
-    <span>  <h6 style="text-align: left;">{{transactions[counter].description}}<br></h6>  <h6 style="text-align: left;">{{transactions[counter].date}}</h6></span>
+    <span>  <h6 style="text-align: left; font-weight: bolder;">{{transactions[counter].description}}<br></h6>  <h6 style="text-align: left; font-weight: lighter;">{{transactions[counter].date}}</h6></span>
 
 
     <div *ngIf="transactions[counter].amount > 0; else elseBlock">
