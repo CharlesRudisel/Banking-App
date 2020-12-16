@@ -2,7 +2,7 @@
 
     <div class="card text-center  rounded" id="main-card" style="background-color: #27293d" id="box1">
         <div class="card-header" style = "background-color: black;">
-            <ul class="nav nav-tabs card-header-tabs">
+          <!-- <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Active</a>
                 </li>
@@ -13,6 +13,8 @@
                     <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
             </ul>
+
+        -->
             <h4 style="text-align: left; font-weight: lighter;">Account: {{acctNum}}</h4>
         </div>
 
@@ -20,13 +22,13 @@
         <div class="card-body" style = "background-color: black; height: 100%;" >
         
             <div class="card-deck" style=" justify-content: center; height: 110;">
-                <app-table-two></app-table-two>
+                <app-table-two [acct_num]= acctNum></app-table-two>
            
             
-                <app-table-three></app-table-three>
+                <app-table-three [acct_num]= acctNum></app-table-three>
            
             
-                <app-table-four></app-table-four>
+                <app-table-four [acct_num]= acctNum></app-table-four>
             </div>
             
             
@@ -88,7 +90,7 @@
 
 
 
-<a [routerLink]="['']"><button class="btn btn-success pull-right"> Back To Homepage</button></a>
+<a [routerLink]="['/main-page']"><button class="btn btn-success pull-right"> Back To Homepage</button></a>
 
 
 </div>

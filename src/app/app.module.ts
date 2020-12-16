@@ -22,6 +22,8 @@ import { TableTwoComponent } from './table-two/table-two.component';
 import { TableThreeComponent } from './table-three/table-three.component';
 import { TableFourComponent } from './table-four/table-four.component';
 import { TableFiveComponent } from './table-five/table-five.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { TableFiveComponent } from './table-five/table-five.component';
     TableTwoComponent,
     TableThreeComponent,
     TableFourComponent,
-    TableFiveComponent
+    TableFiveComponent,
+    LoginComponent,
+    RegistrationComponent
    
   ],
   imports: [
