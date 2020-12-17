@@ -8,17 +8,10 @@ import { AccountService } from './account_service';
 })
 export class AppComponent implements OnInit{
 
-  title = 'BankingApplication';
-
-  public accounts = []
-  public counter: number
-  
- 
-
-  constructor(private _accountService: AccountService) {}
+  constructor() {}
 
   ngOnInit() {
-    this._accountService.getAccounts().subscribe(data => this.accounts = data);
+    
     
   }
 

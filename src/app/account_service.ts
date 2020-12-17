@@ -7,14 +7,26 @@ import { Iaccount } from './account';
 @Injectable()
 export class AccountService {
 
-    private _url: string = "http://localhost:8080/account/accounts/2";
+   // private cust_num = "2";
+    public customer = []
+    private _url: string = "http://localhost:8080/account/accounts/";
     private Update_url: string = "http://localhost:8080/account/accounts/focus/";
+    
     
 
     constructor(private http: HttpClient) {}
 
+    myMethod(cust_num:string){
+        this.customer = []
+        this.customer.push(cust_num)
+       
+    }
+
+   
+
     getAccounts(): Observable<Iaccount[]> {
-        return this.http.get<Iaccount[]>(this._url);
+        console.log(this.customer)
+        return this.http.get<Iaccount[]>(this._url + this.customer[0]);
     }
 
     updateAccount(id: any, account: Iaccount){

@@ -24,6 +24,7 @@ import { TableFourComponent } from './table-four/table-four.component';
 import { TableFiveComponent } from './table-five/table-five.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { CustomerService } from './customer.service';
 
 
 @NgModule({
@@ -52,7 +53,7 @@ import { RegistrationComponent } from './registration/registration.component';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [TransactionServiceService, AccountService],
+  providers: [TransactionServiceService, AccountService, CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
