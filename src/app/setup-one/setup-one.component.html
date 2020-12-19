@@ -1,0 +1,29 @@
+<div class="card-deck" >
+  <div class="card" (click)="clickEvent(0)" [ngClass]="array[0] ? 'success' : 'danger'">
+      <img class="card-img-top" src="../../assets/checking_acct.png"alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Checking Account</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">FDIC Approved</small></p>
+      </div>
+    </div>
+    <div class="card" (click)="clickEvent(1)" [ngClass]="array[1] ? 'success' : 'danger'">
+      <img class="card-img-top" src="../../assets/savings_acct.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Savings Account</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text"><small class="text-muted">FDIC Approved</small></p>
+      </div>
+    </div>
+    <div class="card " (click)="clickEvent(2)" [ngClass]="array[2] ? 'success' : 'danger'">
+      <img class="card-img-top" src="../../assets/credit_card.jpeg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Credit Card</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text"><small class="text-muted">FDIC Approved</small></p>
+      </div>
+    </div>
+</div>
+    <button type="button" class="btn btn-primary btn-lg">Large button</button>
+
+ 

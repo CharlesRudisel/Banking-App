@@ -25,6 +25,9 @@ import { TableFiveComponent } from './table-five/table-five.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { CustomerService } from './customer.service';
+import { SetupOneComponent } from './setup-one/setup-one.component';
+import { SetupTwoComponent } from './setup-two/setup-two.component';
+import { SetupThreeComponent } from './setup-three/setup-three.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { CustomerService } from './customer.service';
     TableFourComponent,
     TableFiveComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    SetupOneComponent,
+    SetupTwoComponent,
+    SetupThreeComponent
    
   ],
   imports: [
