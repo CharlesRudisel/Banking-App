@@ -1,29 +1,32 @@
+<h1 style="color: white; text-align: center;">Select one or more accounts</h1>
+
 <div class="card-deck" >
-  <div class="card" (click)="clickEvent(0)" [ngClass]="array[0] ? 'success' : 'danger'">
+  <div class="card"  id="test" (click)="clickEvent(0)" [ngClass]="array[0] ? 'success' : 'danger'">
       <img class="card-img-top" src="../../assets/checking_acct.png"alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Checking Account</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"> Easily deposit and withdraw money for daily transactions. This may include depositing a check you receive, taking out cash with your debit card or setting up direct deposit for your paychecks.</p>
         <p class="card-text"><small class="text-muted">FDIC Approved</small></p>
       </div>
     </div>
-    <div class="card" (click)="clickEvent(1)" [ngClass]="array[1] ? 'success' : 'danger'">
+    <div class="card" id="test"  (click)="clickEvent(1)" [ngClass]="array[1] ? 'success' : 'danger'">
       <img class="card-img-top" src="../../assets/savings_acct.png" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Savings Account</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text"> Create some distance between everyday spending money, kept in your checking account, and cash that's meant for a later date, like an emergency or a vacation. Unlike most checking accounts, savings accounts also typically earn interest.</p>
         <p class="card-text"><small class="text-muted">FDIC Approved</small></p>
       </div>
     </div>
-    <div class="card " (click)="clickEvent(2)" [ngClass]="array[2] ? 'success' : 'danger'">
+    <div class="card"  id="test" (click)="clickEvent(2)" [ngClass]="array[2] ? 'success' : 'danger'">
       <img class="card-img-top" src="../../assets/credit_card.jpeg" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Credit Card</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text">3% cash back in the category of your choice, 2% cash back at grocery stores and wholesale clubs and 1% cash back on all other purchases..</p>
         <p class="card-text"><small class="text-muted">FDIC Approved</small></p>
       </div>
     </div>
+    
 </div>
-    <button type="button" class="btn btn-primary btn-lg">Large button</button>
-
+    
+<button type="button" class="btn btn-primary btn-lg" [routerLink]="['/setup_two']">Next</button>
  

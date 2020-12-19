@@ -3,16 +3,34 @@
 .card-deck{
     margin: auto;
     width: 80%;
+    margin-bottom: auto;
     //border: 3px solid green;
-    padding: 10% 0;
+    padding: 5% 0;
 }
 
 .btn{
-    margin: 0;
+    margin-left: 11.0%;
+    margin-top: 0%;
+    display: inline-block;
 }
 
 .danger{
 
     border: 8px solid blue;
+    
    
+}
+
+#test:hover{
+
+    //border: 8px solid blue;
+    transform: scale(1.1);
+}
+
+.success{
+    border: none;
+}
+
+h1{
+    margin-top:5%
 }
