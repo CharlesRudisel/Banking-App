@@ -51,6 +51,10 @@ export class AccountService {
         })
     }
 
+    getAccounts4(id:any): Observable<Iaccount[]> {
+        //console.log(this.customer)
+        return this.http.get<Iaccount[]>(this.Update_url + id);
+    }
     updateAccount(id: any, account: Iaccount){
         this.http.put(this.Update_url + id, account).subscribe(data =>{
             console.log(data);
