@@ -89,7 +89,6 @@ export class TableFiveComponent implements OnInit {
             backgroundColor: [
               'rgba(54, 162, 235, 0.2)',
               'rgba(255, 99, 132, 0.2)',
-              
               'rgba(144,238,144, 0.2)',
               'rgba(255, 255, 0, 0.2)',
               'rgba(167, 12, 255, 0.2)'
@@ -99,7 +98,6 @@ export class TableFiveComponent implements OnInit {
             borderColor: [
               'rgba(54, 162, 235, 1)',
               'rgba(255, 99, 132, 1)',
-              
               'rgba(144,238,144, 1)',
               'rgba(255, 255, 0, 1)',
               'rgba(167, 12, 255, 1)'

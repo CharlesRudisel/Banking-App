@@ -103,7 +103,6 @@ export class TableThreeComponent implements OnInit {
               'rgba(144,238,144, 0.2)',
               'rgba(255, 255, 0, 0.2)',
               'rgba(167, 12, 255, 0.2)',
-              
               'rgba(127, 140, 141 , 0.2)'
             ],
 
@@ -113,7 +112,6 @@ export class TableThreeComponent implements OnInit {
               'rgba(144,238,144, 1)',
               'rgba(255, 255, 0, 1)',
               'rgba(167, 12, 255, 1)',
-             
               'rgba(127, 140, 141 , 1)'
             ],
             borderWidth: 1
