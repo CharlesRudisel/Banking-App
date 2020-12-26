@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { SetupFourComponent } from './setup-four/setup-four.component';
 import { SetupOneComponent } from './setup-one/setup-one.component';
 import { SetupThreeComponent } from './setup-three/setup-three.component';
 import { SetupTwoComponent } from './setup-two/setup-two.component';
@@ -18,8 +19,13 @@ const routes: Routes = [
 {path: 'registration', component: RegistrationComponent},
 {path: 'login', component:LoginComponent}, 
 {path: 'setup_one', component:SetupOneComponent},
+{path: 'setup_one/:id', component:SetupOneComponent},
 {path: 'setup_two', component:SetupTwoComponent},
-{path: 'setup_three', component:SetupThreeComponent},];
+{path: 'setup_two/:id', component:SetupTwoComponent},
+{path: 'setup_three', component:SetupThreeComponent},
+{path: 'setup_three/:id', component:SetupThreeComponent},
+{path: 'setup_four', component:SetupFourComponent},
+{path: 'setup_four/:id', component:SetupFourComponent},];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

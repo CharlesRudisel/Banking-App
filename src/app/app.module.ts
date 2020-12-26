@@ -28,6 +28,7 @@ import { CustomerService } from './customer.service';
 import { SetupOneComponent } from './setup-one/setup-one.component';
 import { SetupTwoComponent } from './setup-two/setup-two.component';
 import { SetupThreeComponent } from './setup-three/setup-three.component';
+import { SetupFourComponent } from './setup-four/setup-four.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { SetupThreeComponent } from './setup-three/setup-three.component';
     RegistrationComponent,
     SetupOneComponent,
     SetupTwoComponent,
-    SetupThreeComponent
+    SetupThreeComponent,
+    SetupFourComponent
    
   ],
   imports: [

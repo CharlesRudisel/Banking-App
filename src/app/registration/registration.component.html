@@ -43,7 +43,7 @@
       </div>
 
 
-    <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info" [routerLink]="['/setup_one']">Register</button>
+    <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info" (click)="registerUser()" [routerLink]="['/setup_one']">Register</button>
     
     <small style="color:white" class="float-right btextual" [routerLink]="['/login']">Existing customer? Login here!</small>
 </form>

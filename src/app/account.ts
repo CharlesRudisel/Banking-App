@@ -10,6 +10,12 @@ export class Iaccount{
         this.balance = num;
     }
 
+    constructor(balance: number, acct_type: string) {
+        this.balance = balance;
+        this.acct_type = acct_type;
+        this.interest_rate = 0;
+      }
+
 
     
  

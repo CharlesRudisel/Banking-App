@@ -1,6 +1,6 @@
 <div class="container">
 
-    <h1 style="color: white; text-align: center;">Select 21 or more Transactions</h1>
+    <h1 style="color: white; text-align: center;">Select {{number_of_trans}} or more Transactions</h1>
     <br>
     <div class="card-columns">
 
@@ -206,5 +206,5 @@
 
     </div>
 
-    <button type="button" class="btn" style="background-color: white;" [routerLink]="['/setup_three']">Next</button>
+    <button type="button" class="btn" [disabled]="buttonDisabled" style="background-color: white;" (click)="onSelect()">Next</button>
 </div>

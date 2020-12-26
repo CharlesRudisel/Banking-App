@@ -1,6 +1,6 @@
 <div class="container">
 
-    <h1 style="color: white; text-align: center;">Select 21 or more amounts</h1>
+    <h1 style="color: white; text-align: center;">Select exactly {{iterator}} amounts </h1>
     <br>
     <div class="card-columns">
 
@@ -205,5 +205,5 @@
 
     </div>
 
-    <button type="button" class="btn" style="background-color: white;" [routerLink]="['/setup_three']">Next</button>
+    <button type="button" class="btn" style="background-color: white;" [disabled]="buttonDisabled" (click)="onSelect()">Next</button>
 </div>

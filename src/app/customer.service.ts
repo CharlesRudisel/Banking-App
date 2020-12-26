@@ -19,6 +19,10 @@ export class CustomerService {
       return this.http.get<Customer>("http://localhost:8080/customer/customers/email/" + email);
   }
 
+  getCustomer2(): Observable<Customer> {
+    return this.http.get<Customer>("http://localhost:8080/customer/customers/"+sessionStorage.getItem("customer"));
+}
+
  
- 
+ ///customers/{customer_number}
 }
