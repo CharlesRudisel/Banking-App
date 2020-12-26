@@ -15,7 +15,9 @@ export class AccountOverviewComponent implements OnInit {
   public acctNum;
   fakeArray = new Array( Number(this.accounts.length) + 10);
   public account_type;
-  public account = [];
+  
+  test: Iaccount;
+  
 
   constructor(private _accountService: AccountService, private route: ActivatedRoute) { }
 
@@ -25,11 +27,9 @@ export class AccountOverviewComponent implements OnInit {
     let id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.acctNum = id;
     this._accountService.getAccounts().subscribe(data => this.accounts = data);
+    //console.log(this.accounts)
 
-    this._accountService.getAccounts4(this.acctNum).subscribe(data => this.account = data)
-
-    
-    
+  
   }
 
 }

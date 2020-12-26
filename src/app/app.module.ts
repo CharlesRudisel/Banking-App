@@ -29,6 +29,7 @@ import { SetupOneComponent } from './setup-one/setup-one.component';
 import { SetupTwoComponent } from './setup-two/setup-two.component';
 import { SetupThreeComponent } from './setup-three/setup-three.component';
 import { SetupFourComponent } from './setup-four/setup-four.component';
+import { BalanceComponent } from './balance/balance.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { SetupFourComponent } from './setup-four/setup-four.component';
     SetupOneComponent,
     SetupTwoComponent,
     SetupThreeComponent,
-    SetupFourComponent
+    SetupFourComponent,
+    BalanceComponent
    
   ],
   imports: [
