@@ -14,6 +14,7 @@ export class LineChartComponent implements OnInit {
   chart = [];
   @Input() test_array;
   accounts = []
+  
 
   constructor(private _accountService: AccountService) { }
 
@@ -21,6 +22,8 @@ export class LineChartComponent implements OnInit {
 
     var balances: Array<Number> = [];
     var labelz: Array<String> = [];
+    var colors: Array<String> = [];
+    var color_outlines: Array<String> = [];
 
     this._accountService.getAccounts().subscribe(data => {
       this.accounts = data;
@@ -48,6 +51,25 @@ export class LineChartComponent implements OnInit {
         balances;
       }
 
+      function getColors(account: Iaccount[]) {
+        for (let i = 0; i < account.length; i++) {
+          if(account[i].acct_type == "checking"){
+            colors.push('rgba(255, 99, 132, 0.2)')
+            color_outlines.push('rgba(255, 99, 132, 1)')
+          }
+          if(account[i].acct_type == "savings"){
+            colors.push('rgba(54, 162, 235, 0.2)')
+            color_outlines.push('rgba(54, 162, 235, 1)')
+          }
+          if(account[i].acct_type == "credit card"){
+            colors.push('rgba(144,238,144, 0.2)')
+            color_outlines.push('rgba(144,238,144, 1)')
+          }
+          
+        }
+        //console.log(balances[0])
+        labelz;
+      }
 
 
       function getLabel(account: Iaccount[]) {
@@ -58,6 +80,7 @@ export class LineChartComponent implements OnInit {
         labelz;
       }
 
+      getColors(this.accounts)
       getLabel(this.accounts)
       getBal(this.accounts)
 
@@ -70,22 +93,11 @@ export class LineChartComponent implements OnInit {
             data: balances,
 
 
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(144,238,144, 0.2)',
-              'rgba(255, 255, 0, 0.2)',
-              'rgba(167, 12, 255, 0.2)'  
+            backgroundColor: 
+             colors,
 
 
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(144,238,144, 1)',
-              'rgba(255, 255, 0, 1)',
-              'rgba(167, 12, 255, 1)'  
-            ],
+            borderColor: color_outlines,
             //borderWidth: 1
           }]
         },
