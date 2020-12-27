@@ -4,6 +4,8 @@
     background-color: #27293d;
     //padding-top: 1%;
     padding-bottom: 2%;
+    padding-left: 0%;
+    padding-right: 0%;
     //position: absolute;
     margin-top:10%;
     
@@ -11,11 +13,11 @@
     
 }
 .Big-container{
-    //position: relative;
+    position: relative;
 }
 
 img{
-    width: 105%;
-    height: 108%;
-    left: 10%
+    width: 100%;
+    height: 106%;
+    //left: 10%
 }
