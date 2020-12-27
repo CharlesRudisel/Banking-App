@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'main-navbar',
@@ -7,9 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainNavbarComponent implements OnInit {
 
-  constructor() { }
+  @Input() test_array: any[];
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+
+   
+  }
+
+ 
+
+  onSelect(){
+
+    function myFunction() {
+      alert("You already have the maximum number of accounts");
+    }
+
+    if(this.test_array.length < 3){
+
+      this.router.navigate(['/setup_one'])
+    }
+    else 
+    {
+      myFunction()
+    }
   }
 
 }
