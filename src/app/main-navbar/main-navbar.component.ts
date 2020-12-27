@@ -18,7 +18,7 @@ export class MainNavbarComponent implements OnInit {
   onSelect(){
 
     function myFunction() {
-      alert("You already have the maximum number of accounts");
+      alert("You already have the maximum number of accounts (3)");
     }
 
     if(this.test_array.length < 3){

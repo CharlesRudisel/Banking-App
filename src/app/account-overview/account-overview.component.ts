@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../account_service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Iaccount } from '../account';
+import { CustomerService } from '../customer.service';
+import { Customer } from '../customer';
 
 @Component({
   selector: 'app-account-overview',
@@ -15,11 +17,12 @@ export class AccountOverviewComponent implements OnInit {
   public acctNum;
   fakeArray = new Array( Number(this.accounts.length) + 10);
   public account_type;
+  customers: Customer;
   
   test: Iaccount;
   
 
-  constructor(private _accountService: AccountService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private _accountService: AccountService, private route: ActivatedRoute, private router: Router, private _customerService: CustomerService) { }
 
   ngOnInit() {
 
@@ -34,13 +37,15 @@ export class AccountOverviewComponent implements OnInit {
 
   onSelect(){
 
+    this._customerService.getCustomer2().subscribe(data => this.customers = data)
+
     function myFunction() {
       alert("You already have the maximum number of accounts (3)");
     }
 
     if(this.accounts.length < 3){
 
-      this.router.navigate(['/setup_one'])
+      this.router.navigate(['/setup_one', this.customers.email])
     }
     else 
     {
