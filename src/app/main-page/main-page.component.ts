@@ -21,6 +21,8 @@ export class MainPageComponent implements OnInit {
   morning = new Date();
   afternoon = new Date();
   evening = new Date();
+
+  TOD_img;
   
 
 
@@ -40,15 +42,23 @@ export class MainPageComponent implements OnInit {
     var evening = new Date();
     evening.setHours(18, 0, 0); // 6.30 pm
 
+    console.log(currentD < morning)
+
     
     if (currentD >= morning && currentD < afternoon) {
       this.timeOfDate ="Morning";
+      this.TOD_img ="sunrise (1).png";
+      console.log("morning")
     }
     if (currentD >= afternoon && currentD < evening) {
       this.timeOfDate ="Afternoon";
+      this.TOD_img ="sunny.png";
+      console.log("afternoon")
     } 
-    if (currentD >= evening && currentD < morning) {
+    if (currentD >= evening ) {
       this.timeOfDate ="Evening";
+      this.TOD_img ="night.png";
+      console.log("evening")
     } 
   
   }
