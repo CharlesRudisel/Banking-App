@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../account_service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Iaccount } from '../account';
 
 @Component({
@@ -19,7 +19,7 @@ export class AccountOverviewComponent implements OnInit {
   test: Iaccount;
   
 
-  constructor(private _accountService: AccountService, private route: ActivatedRoute) { }
+  constructor(private _accountService: AccountService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
 
@@ -30,6 +30,22 @@ export class AccountOverviewComponent implements OnInit {
     //console.log(this.accounts)
 
   
+  }
+
+  onSelect(){
+
+    function myFunction() {
+      alert("You already have the maximum number of accounts (3)");
+    }
+
+    if(this.accounts.length < 3){
+
+      this.router.navigate(['/setup_one'])
+    }
+    else 
+    {
+      myFunction()
+    }
   }
 
 }

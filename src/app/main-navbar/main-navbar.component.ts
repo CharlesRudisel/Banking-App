@@ -13,11 +13,7 @@ export class MainNavbarComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-
-   
   }
-
- 
 
   onSelect(){
 
