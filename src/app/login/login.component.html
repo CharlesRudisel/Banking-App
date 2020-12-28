@@ -38,7 +38,7 @@
               <label style="color:white"><input type="checkbox" name="remember"> Remember me</label>
             </div>
             <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-info">Login</button>
-            <br><br><button  type="submit" class="btn btn-success">Demo</button>
+            <br><br><button  (click)="demo()" class="btn btn-success">Demo</button>
             <small class="float-right" (click)="gotoregistration()" style="color:white">New customer? Register
               here!  </small>
               

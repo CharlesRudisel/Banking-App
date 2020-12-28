@@ -41,6 +41,32 @@ export class LoginComponent implements OnInit {
 
   }
 
+  demo(){
+  
+    this.customer.email = "charlesrudisel@gmail.com";
+    this.customer.password = "a";
+    console.log("Demo Clicked")
+    console.log(this.customer)
+
+
+    this._service.loginUserFromRemote(this.customer).subscribe(
+      data => { console.log("Response recieved ");
+
+      this._customerService.getCustomer(this.customer.email).subscribe(data => this.customer2 = data);
+      this._accountService.myMethod(this.customer2.customerNumber.toString());
+      
+      this._router.navigate(['main-page']);
+
+      
+       
+    },
+      error => {
+        console.log("Exception Occured") 
+        this.msg = 'bad credentials, please enter valid email and password '}
+    )
+    
+  }
+
   gotoregistration(){
     this._router.navigate(['registration'])
   }
