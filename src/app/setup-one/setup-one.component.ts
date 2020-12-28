@@ -17,6 +17,8 @@ export class SetupOneComponent implements OnInit {
   public email;
   buttonDisabled: boolean = true;
   accounts = []
+  numberOfAccounts:number;
+  limit: number;
   
 
 //=====================================================================================
@@ -35,6 +37,10 @@ export class SetupOneComponent implements OnInit {
       if(this.counter > 0){
         this.buttonDisabled = false;
       }
+      if(this.counter > this.limit){
+        this.buttonDisabled = true;
+        alert("Please select a maximum of " + this.limit + " accounts");
+      }
       //console.log(this.email);
       console.log(this.counter) ;  
       //console.log(this.array);
@@ -49,7 +55,9 @@ export class SetupOneComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this._accountService.getAccounts().subscribe(data => { this.accounts = data
+    this.numberOfAccounts = parseInt(sessionStorage.getItem("NumberOfAccounts"))
+
+    this._accountService.getAccounts2(this.email).subscribe(data => { this.accounts = data
     
     let id = this.route.snapshot.paramMap.get('id');
     this.email = id;
@@ -62,8 +70,24 @@ export class SetupOneComponent implements OnInit {
       
     }
     this.acct_array.push(this.email);
-    console.log(this.array);
-    console.log(this.accounts.length) } );
+    
+
+    if(this.numberOfAccounts == 0){
+      this.limit = 3
+    }
+    if(this.numberOfAccounts== 1){
+      this.limit = 2
+    }
+    if(this.numberOfAccounts == 2){
+      this.limit = 1
+    }
+
+    //console.log(this.array);
+    console.log("Number of accounts:" + this.accounts.length)
+    console.log("Limit of new accts:" + this.limit)
+  
+  
+  } );
   }
 
 //=====================================================================================

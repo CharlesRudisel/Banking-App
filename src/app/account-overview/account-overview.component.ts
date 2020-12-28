@@ -18,6 +18,7 @@ export class AccountOverviewComponent implements OnInit {
   fakeArray = new Array( Number(this.accounts.length) + 10);
   public account_type;
   customers: Customer;
+  balance: string;
   
   test: Iaccount;
   
@@ -29,8 +30,12 @@ export class AccountOverviewComponent implements OnInit {
     
     let id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.acctNum = id;
+
     this._accountService.getAccounts().subscribe(data => this.accounts = data);
-    //console.log(this.accounts)
+    
+    console.log(sessionStorage.getItem("overview"))
+    this.balance = sessionStorage.getItem("overview");
+    
 
   
   }
@@ -46,10 +51,12 @@ export class AccountOverviewComponent implements OnInit {
     if(this.accounts.length < 3){
 
       this.router.navigate(['/setup_one', this.customers.email])
+      sessionStorage.setItem("NumberOfAccounts", this.accounts.length.toString());
     }
     else 
     {
       myFunction()
+      console.log(this.accounts)
     }
   }
 

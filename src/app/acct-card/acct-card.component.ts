@@ -31,7 +31,9 @@ export class AcctCardComponent implements OnInit {
   }
 
   onSelect(_account){
+    sessionStorage.setItem("overview", this.test_array[this.index].balance.toString());
     this.router.navigate(['/account-overview', this.test_array[this.index].accountNumber])
+    
   }
 
 }

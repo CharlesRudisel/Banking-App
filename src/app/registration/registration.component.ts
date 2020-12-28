@@ -33,6 +33,7 @@ export class RegistrationComponent implements OnInit {
       
         //this._router.navigate(['/login'])
         this._router.navigate(['/setup_one', this.customer.email])
+        
       },
       error =>{
         console.log("Exception Occured");
@@ -40,6 +41,8 @@ export class RegistrationComponent implements OnInit {
         
       }
     )
+    sessionStorage.setItem("NumberOfAccounts", '0');
+
   }
 
 }
