@@ -26,6 +26,7 @@ export class TransferCardComponent implements OnInit {
   details2;
   from_operand: number;
   to_operand: number;
+  disabled: boolean = true
   x: number;
   y:number;
   w:number;
@@ -37,11 +38,18 @@ export class TransferCardComponent implements OnInit {
 
 
   ngOnInit(): void {
+
   }
 
   onSubmit(Balance_operand: any, from_acct_data: string , to_acct_data: string){
 
-    
+
+    console.log(typeof Balance_operand)
+    if(Balance_operand.trim() === ""){
+      alert("Enter an amount that you would like to transfer")
+      
+    }
+    else{
     this.details = from_acct_data.split(" ",2)
     this.from_acct_index = this.details[0];
 
@@ -77,5 +85,5 @@ export class TransferCardComponent implements OnInit {
     this._transactionService.postTransaction(this.test_array[this.to_acct_index].accountNumber, this.to_transaction)
     location.reload();
   }
-
+  }
 }
