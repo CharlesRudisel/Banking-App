@@ -105,6 +105,9 @@ export class SetupOneComponent implements OnInit {
       this.acct_array.push("credit card");
     }
 
+    sessionStorage.setItem("add_counter", this.counter.toString());
+    sessionStorage.setItem("limit", this.limit.toString());
+
     const queryParams: any = {};
     queryParams.myArray = JSON.stringify(this.acct_array);
 

@@ -15,6 +15,7 @@ export class RegistrationComponent implements OnInit {
 
   customer = new Customer();
   msg= " ";
+  error: boolean = false;
   
 
   constructor(private _service: RegistrationService, private _router: Router) { }
@@ -30,19 +31,23 @@ export class RegistrationComponent implements OnInit {
         //this._customerService.getCustomer(this.customer.email).subscribe(data => this.customer2 = data);
         //this._accountService.myMethod(this.customer2.customerNumber.toString());
         //console.log(this.customer2.customerNumber)
-      
+        this._router.navigate(['/setup_one', this.customer.email])  
         //this._router.navigate(['/login'])
-        this._router.navigate(['/setup_one', this.customer.email])
+        sessionStorage.setItem("NumberOfAccounts", '0');
         
       },
       error =>{
         console.log("Exception Occured");
-        this.msg = error.error;
+        this.msg = "This email already exists. Choose a new email";
+        //this._router.navigate(['/registration'])
+      
         
       }
     )
-    sessionStorage.setItem("NumberOfAccounts", '0');
+   
+    
 
+    
   }
 
 }

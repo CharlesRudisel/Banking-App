@@ -1,7 +1,7 @@
 <div class="container">
     <h2 style="color:white">Customer Registration</h2>
     <form #Registerform ="ngForm" (ngSubmit)= "registerUser()">
-        <small>{{msg}}</small>
+        <small style="color: red;">{{msg}}</small>
       <div class="form-group">
         <label for="email" style="color:white">Email:</label>
         <input type="email" class="form-control"  placeholder="Enter email" name="email" [(ngModel)]="customer.email" required #email="ngModel" 
@@ -43,7 +43,7 @@
       </div>
 
 
-    <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info" (click)="registerUser()" [routerLink]="['/setup_one']">Register</button>
+    <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info" (click)="registerUser()" >Register</button>
     
     <small style="color:white" class="float-right btextual" [routerLink]="['/login']">Existing customer? Login here!</small>
 </form>

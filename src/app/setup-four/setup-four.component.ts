@@ -19,100 +19,125 @@ export class SetupFourComponent implements OnInit {
   transaction_arr = []
   holderTrans: Itransaction;
   iterator;
-
+  counter
+  limit
   constructor(private router: Router, private route: ActivatedRoute, private _accountService: AccountService, private _transactionService: TransactionServiceService) { }
 
   ngOnInit(): void {
 
-    
-      const myArray = this.route.snapshot.queryParamMap.get('myArray');
-      if (myArray === null) {
-        this.array_of_selected_accounts = new Array<string>();
-      } else {
-        this.array_of_selected_accounts = JSON.parse(myArray);
-      }
 
-      
-      this.email = this.array_of_selected_accounts.pop()
-      this.iterator = this.array_of_selected_accounts.pop()
-      // console.log(this.email)
-      //console.log(this.array_of_selected_accounts)
+    const myArray = this.route.snapshot.queryParamMap.get('myArray');
+    if (myArray === null) {
+      this.array_of_selected_accounts = new Array<string>();
+    } else {
+      this.array_of_selected_accounts = JSON.parse(myArray);
+    }
 
-     
 
-    
-    
+    this.email = this.array_of_selected_accounts.pop()
+    this.iterator = this.array_of_selected_accounts.pop()
+    // console.log(this.email)
+    //console.log(this.array_of_selected_accounts)
+
+    this.limit = parseInt(sessionStorage.getItem("limit"))
+    this.counter = parseInt(sessionStorage.getItem("add_counter"))
+
+    console.log(this.limit)
+
     console.log(this.email)
   }
 
 
- async onSelect() {
+  async onSelect() {
 
     //console.log(this.accounts)
     console.log(this.iterator)
     console.log(this.array_of_selected_accounts)
 
-    await this._accountService.getAccounts2(this.email).subscribe(data =>{
-       this.accounts = data
-    console.log(this.accounts)
+    await this._accountService.getAccounts2(this.email).subscribe(data => {
+      this.accounts = data
+      console.log(this.accounts)
 
-    function chunkArray(myArray, chunk_size) {
-      var index = 0;
-      var arrayLength = myArray.length;
-      var tempArray = [];
+      //================================================================================================================
+      function chunkArray(myArray, chunk_size) {
+        var index = 0;
+        var arrayLength = myArray.length;
+        var tempArray = [];
 
-      for (index = 0; index < arrayLength; index += chunk_size) {
-        let myChunk = myArray.slice(index, index + chunk_size);
-        // Do something if you want with the group
-        tempArray.push(myChunk);
+        for (index = 0; index < arrayLength; index += chunk_size) {
+          let myChunk = myArray.slice(index, index + chunk_size);
+          // Do something if you want with the group
+          tempArray.push(myChunk);
+        }
+
+        return tempArray;
       }
 
-      return tempArray;
-    }
 
 
-    var result = chunkArray(this.array_of_selected_accounts, this.iterator/this.accounts.length);
+      if (this.limit < 3) {
+        var result = chunkArray(this.array_of_selected_accounts, this.iterator / this.counter);
+        console.log(result)
+        var holder_array = this.accounts.reverse()
+        //================================================================================================================
+        for (let i = 0; i < this.counter; i++) {
 
-    console.log(result)
 
 
-    //================================================================================================================
-    for (let i = 0; i < this.accounts.length; i++) {
+          for (let b = 0; b < result[i].length; b++) {
 
-      
+            console.log(holder_array[i].accountNumber + " : " + result[i][b])
+            this.transaction_arr.push(this.accounts[i].accountNumber + " : " + result[i][b])
+
+
+          }
+        }
+
+
+      }
+
+      else{
+
+      var result = chunkArray(this.array_of_selected_accounts, this.iterator / this.accounts.length);
+      console.log(result)
+      //================================================================================================================
+      for (let i = 0; i < this.accounts.length; i++) {
+
+
 
         for (let b = 0; b < result[i].length; b++) {
 
           console.log(this.accounts[i].accountNumber + " : " + result[i][b])
           this.transaction_arr.push(this.accounts[i].accountNumber + " : " + result[i][b])
-        
-        
+
+
+        }
       }
     }
-
-    //================================================================================================================
-    console.log(this.transaction_arr)
-
-
-    for (let z = 0; z < this.transaction_arr.length; z++) {    // The issue is in this for loop
-
-      this.holderTrans = null;
-      var res = this.transaction_arr[z].split(":");
-      console.log(res)
+      //================================================================================================================
+      console.log(this.transaction_arr)
 
 
-      this.holderTrans = new Itransaction(res[2], res[1], res[3]);
-      this._transactionService.postTransaction(res[0].trim(), this.holderTrans)
+      for (let z = 0; z < this.transaction_arr.length; z++) {    // The issue is in this for loop
 
+        this.holderTrans = null;
+        var res = this.transaction_arr[z].split(":");
+        console.log(res)
+
+
+        this.holderTrans = new Itransaction(res[2], res[1], res[3]);
+        this._transactionService.postTransaction(res[0].trim(), this.holderTrans)
 
 
 
+
+
+      }
+
+      this.router.navigate(['/login'])
 
     }
-
-   this.router.navigate(['/login'])
-
+    );
   }
-);}
 
 }
