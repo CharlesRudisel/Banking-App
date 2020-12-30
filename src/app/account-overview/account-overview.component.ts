@@ -52,6 +52,7 @@ export class AccountOverviewComponent implements OnInit {
 
       this.router.navigate(['/setup_one', this.customers.email])
       sessionStorage.setItem("NumberOfAccounts", this.accounts.length.toString());
+      sessionStorage.setItem("customer_name", this.customers.first_name);
     }
     else 
     {

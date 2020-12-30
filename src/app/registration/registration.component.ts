@@ -34,6 +34,7 @@ export class RegistrationComponent implements OnInit {
         this._router.navigate(['/setup_one', this.customer.email])  
         //this._router.navigate(['/login'])
         sessionStorage.setItem("NumberOfAccounts", '0');
+        sessionStorage.setItem("customer_name", this.customer.first_name);
         
       },
       error =>{

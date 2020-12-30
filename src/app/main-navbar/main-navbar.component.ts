@@ -30,6 +30,7 @@ export class MainNavbarComponent implements OnInit {
 
       this.router.navigate(['/setup_one', this.customers.email])
       sessionStorage.setItem("NumberOfAccounts", this.test_array.length.toString());
+      sessionStorage.setItem("customer_name", this.customers.first_name);
     }
     else 
     {

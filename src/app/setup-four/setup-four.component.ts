@@ -21,6 +21,7 @@ export class SetupFourComponent implements OnInit {
   iterator;
   counter
   limit
+  first_name;
   constructor(private router: Router, private route: ActivatedRoute, private _accountService: AccountService, private _transactionService: TransactionServiceService) { }
 
   ngOnInit(): void {
@@ -41,6 +42,7 @@ export class SetupFourComponent implements OnInit {
 
     this.limit = parseInt(sessionStorage.getItem("limit"))
     this.counter = parseInt(sessionStorage.getItem("add_counter"))
+    this.first_name = sessionStorage.getItem("customer_name");
 
     console.log(this.limit)
 
